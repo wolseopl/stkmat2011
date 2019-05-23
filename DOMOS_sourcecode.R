@@ -206,7 +206,7 @@ head(sort(a, decreasing = T))
 plot(log(98+1-a), atc)
 
 df.2p4ghz.t$ChaminStatsAverage.txop <- log(98+1-df.2p4ghz.t$ChaminStatsAverage.txop)
-colnames(df.2p4ghz.t)[names(df.2p4ghz.t)=="ChaminStatsAverage.txop"] <- "refl_lnCSA.txop"
+colnames(df.2p4ghz.t)[names(df.2p4ghz.t)=="ChaminStatsAverage.txop"] <- "ln_reflected.txop"
 
 # log transformation of ChaminStatsAverage.badtx
 a <- df.2p4ghz.t$ChaminStatsAverage.badtx
@@ -566,7 +566,7 @@ gam.t=gam(sqrt(AirtimeCoeff)~
           +s(NumCompAPsSameChnl, k=10)
           +s(NumNonCompAPsOthrChnls, k=13)
           +s(ChaminStatsAverage.knoise, k=15)
-          +s(refl_lnCSA.txop, k=10)
+          +s(ln_reflected.txop, k=10)
           +s(in_network_SumAllDevices, k=10)
           +s(lnCSA.obss, k=10)
           # 
